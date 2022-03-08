@@ -6,5 +6,4 @@ target
 **/*.log
 dist
 logs
-cache
 build
