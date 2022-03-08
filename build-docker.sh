@@ -35,7 +35,19 @@ if [ ! -d "$BuildDir/build" ]; then
     mkdir $BuildDir/build
 fi
 
-mv $BuildDir/report-core/target/aj-report-*.zip $BuildDir/build/
+rm -rf $BuildDir/build/*
 
+mv $BuildDir/report-core/target/aj-report-*.zip $BuildDir/build/
 rm -rf $BuildDir/report-core/src/main/resources/static/*
+
+ls $BuildDir/build/aj-report-*.zip
+unzip $BuildDir/build/aj-report-*.zip -d $BuildDir/build/
+rm -rf $BuildDir/build/aj-report-*.zip
+mv $BuildDir/build/* $BuildDir/build/aj-report
+
+# echo "build docker ..."
+# cd $BuildDir
+# docker build -t datavisualization/aj-report:2.0 .
+
+
 

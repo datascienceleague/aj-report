@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  webapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: datavisualization/aj-report:2.0
+    restart: always
+    ports:
+      - "9095:9095"
+    links:
+      - mysql
+    volumes:
+      - ./data/conf:/opt/aj-report/conf
+    networks:
+      - aj_network
+
+  mysql:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ajpassword
+      MYSQL_DATABASE: ajreport
+      
+    networks:
+      - aj_network
+
+networks:
+  aj_network:
+    driver: bridge
