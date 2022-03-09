@@ -1,22 +1,22 @@
 version: "3.9"
 
 services:
-  # webapp:
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile
-  #   image: datavisualization/aj-report:2.0
-  #   restart: always
-  #   ports:
-  #     - "9095:9095"
-  #   links:
-  #     - mysql
-  #   depends_on:
-  #     - mysql
-  #   volumes:
-  #     - ./data/conf:/opt/aj-report/conf
-  #   networks:
-  #     - aj_network
+  ajreport:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: datavisualization/aj-report:2.1
+    restart: always
+    ports:
+      - "9095:9095"
+    links:
+      - mysql
+    depends_on:
+      - mysql
+    volumes:
+      - ./data/conf:/opt/aj-report/conf
+    networks:
+      - aj_network
 
   mysql:
     image: mysql:5.7
