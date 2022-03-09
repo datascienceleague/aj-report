@@ -29,6 +29,11 @@ services:
       - "3306:3306"
     networks:
       - aj_network
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
 
 networks:
   aj_network:
