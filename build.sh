@@ -17,7 +17,7 @@ BuildDir=$(pwd) #工程根目录
 
 echo "building web ..."
 cd $BuildDir/report-ui
-npm install --registry=https://registry.npm.taobao.org 2>&1
+npm install --force --registry=https://registry.npm.taobao.org 2>&1
 npm run build:prod 2>&1
 
 echo "publish web to springboot src/main/resources/static ..."

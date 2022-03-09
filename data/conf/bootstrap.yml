@@ -19,7 +19,7 @@ spring:
   messages:
     basename: i18n/messages
   datasource:
-    url: jdbc:mysql://mysql:3306/ajreport?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false
+    url: jdbc:mysql://mysql:3306/aj_report?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false
     username: root
     password: ajpassword
   #数据源连接池配置
