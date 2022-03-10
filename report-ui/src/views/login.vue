@@ -8,12 +8,15 @@
 -->
 <template>
   <div class="login_container">
+    <!-- <img src="@/assets/images/login.png" alt="image" class="login_img" /> -->
     <!-- 顶部logo -->
     <div class="login_title">
-      <img src="@/assets/images/home-logo.png" alt="logo" />
+      <img src="@/assets/images/home-logo.png" alt="logo" style="width: 36px; height:36px" /> <span style="margin-left:10px;font-size: 32px;color:white;font-weight: bold">
+        睿云AI-REPORT
+      </span>
     </div>
     <div class="login_contant">
-      <img src="@/assets/images/login.png" alt="image" class="login_img" />
+      <!-- <img src="@/assets/images/login.png" alt="image" class="login_img" /> -->
       <el-form
         ref="loginForm"
         :model="loginForm"
@@ -25,9 +28,9 @@
       >
         <div class="title_container">
           <h3 class="title">
-            HELLO,
-            <br />
-            <p class="title_name">在线大屏</p>
+          
+            <!-- <br /> -->
+            <p class="title_name" style="color:white;font-weight: bold;font-size:28px;text-align:center">睿云AI-REPORT</p>
           </h3>
         </div>
         <div class="form_fields">
@@ -89,7 +92,7 @@
         <div class="control">
           <div class="remember">
             <input v-model="rememberPsw" type="checkbox" />
-            <p>记住密码</p>
+            <p style="color:white">记住密码</p>
           </div>
         </div>
         <el-button
@@ -109,6 +112,7 @@
       :img-size="{ width: '400px', height: '200px' }"
       @success="verifylogin"
     />
+    <el-footer style="color:white;text-align:center">©2022 贵州睿云慧通</el-footer>
   </div>
 </template>
 
@@ -274,6 +278,7 @@ export default {
 }
 
 .login_container {
+  background-image: url("../assets/images/login.jpg");
   .el-input {
     display: inline-block;
     width: 100%;
@@ -303,7 +308,8 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: -999;
+  color: #ffffff00;
 }
 .login_container {
   height: 100%;
@@ -323,7 +329,7 @@ export default {
   .login_contant {
     position: relative;
     width: 100%;
-    height: calc(100% - 60px);
+    height: calc(100% - 120px);
     .login_img {
       display: block;
       width: 100%;
@@ -331,14 +337,17 @@ export default {
     }
     .login_form {
       position: absolute;
-      top: 50%;
-      right: 30%;
+      top: 45%;
+      right: 15%;
       transform: translate(50%, -50%);
       min-width: 400px;
       width: 22%;
-      height: 460px;
-      background-color: #ffffff;
-      border-radius: 11px;
+      height: 440px;
+      background-color: #04497e69;
+      // opacity: 0.8;
+      border: 3px solid #044a7e;
+      // border-image:linear-gradient(to right,#044a7e,#00aafa) 1 5;
+      border-radius: 15px;
       padding: 30px;
       overflow: hidden;
       .title_container {
@@ -365,8 +374,8 @@ export default {
         width: 100%;
         overflow: hidden;
         padding: 5px 16px;
-        background: #ffffff;
-        border: 1px solid #e0e0e0;
+        background: #fffffff6;
+        border: 1px solid #bb6cc5;
         box-shadow: 0 0 14px 4px rgba(230, 229, 229, 0.5);
         border-radius: 4px 10px 10px 4px;
         i {
@@ -399,8 +408,8 @@ export default {
         }
         .show_pwd {
           position: absolute;
-          right: 10px;
-          top: 0;
+          right: 20px;
+          top: 5px;
           font-size: 16px;
           color: #889aa4;
           cursor: pointer;
@@ -414,7 +423,7 @@ export default {
         align-items: center;
         justify-content: space-between;
         font-size: 14px;
-        color: #919191;
+        // color: #919191;
         .remember {
           width: 36%;
           display: flex;
